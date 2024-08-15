@@ -48,6 +48,16 @@ parser.on('data', function (data) {
         console.log("temp " + temp[1]);
         io.emit('serialdata', { temp: temp[1] });
     }
+    if(data.includes("gas:")){
+        let gas = data.split("gas:");
+        console.log("gas " + gas[1]);
+        io.emit('serialdata', { gas: gas[1] });
+    }
+    if(data.includes("rotation:")){
+        let rotation = data.split("rotation:");
+        console.log("rotation " + rotation[1]);
+        io.emit('serialdata', { rotation: rotation[1] });
+    }
     
     
 });
